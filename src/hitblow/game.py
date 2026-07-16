@@ -7,7 +7,8 @@
 """
 
 from .core import judge, make_secret
-
+from .count import show_welcome
+show_welcome()
 
 def play(digits=3):
     secret = make_secret(digits)
@@ -17,6 +18,8 @@ def play(digits=3):
 
     tries = 0
     while True:
+        from .count import print_remaining
+        print_remaining(tries)
         guess = input("予想 > ").strip()
 
         # ===== ② 入力コマンドに足す（ヒント など）: ここに書く（import もここに） =====
@@ -36,3 +39,9 @@ def play(digits=3):
 
             print(f"正解！ {tries} 回で当たり（答え {secret}）")
             break
+        from .count import is_game_over
+        if is_game_over(tries, secret):
+            break
+if __name__ == "__main__":
+    play()
+
