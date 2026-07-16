@@ -18,6 +18,8 @@ def play(digits=3):
 
     tries = 0
     while True:
+        from .count import print_remaining
+        print_remaining(tries)
         guess = input("予想 > ").strip()
 
         # ===== ② 入力コマンドに足す（ヒント など）: ここに書く（import もここに） =====
