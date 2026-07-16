@@ -7,7 +7,8 @@
 """
 
 from .core import judge, make_secret
-
+from .count import show_welcome
+   show_welcome()
 
 def play(digits=3):
     secret = make_secret(digits)
@@ -36,3 +37,7 @@ def play(digits=3):
 
             print(f"正解！ {tries} 回で当たり（答え {secret}）")
             break
+        from .count import is_game_over
+        if is_game_over(tries, secret):
+            break
+
