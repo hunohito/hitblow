@@ -8,7 +8,7 @@
 
 from .core import judge, make_secret
 from .count import show_welcome
-   show_welcome()
+show_welcome()
 
 def play(digits=3):
     secret = make_secret(digits)
