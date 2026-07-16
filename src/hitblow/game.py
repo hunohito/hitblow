@@ -42,4 +42,6 @@ def play(digits=3):
         from .count import is_game_over
         if is_game_over(tries, secret):
             break
+if __name__ == "__main__":
+    play()
 
