@@ -2,7 +2,7 @@ import sys
 import time
 import msvcrt
 
-def input_with_timeout(prompt="予想 > ", timeout=10.0):
+def input_with_timeout(prompt="予想 > ", timeout=10.0, secret=""):
     """制限時間付きでキーボード入力を受け付け、残り時間を表すバーを表示する。
     
     制限時間を経過した場合はタイムアップを表示してゲームを強制終了する。
@@ -27,7 +27,7 @@ def input_with_timeout(prompt="予想 > ", timeout=10.0):
                 # 行をクリアしてから出力
                 sys.stdout.write(f"\r\033[K")
                 sys.stdout.flush()
-                print(f"\n【タイムアップ！】{timeout}秒が経過しました。ゲームを終了します。")
+                print(f"\n【タイムアップ！】{timeout}秒が経過しました。ゲームを終了します。（答え {secret}）")
                 sys.exit(0)
 
             # プログレスバーの比率
